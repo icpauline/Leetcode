@@ -1,0 +1,10 @@
+# Decimal to binary
+def decimal_to_binary(n):
+    ans = 0
+    factor = 1
+    while (n!=0):
+        ans+=(n%2)*factor
+        factor*=10
+        n = n//2
+    return ans
+print(decimal_to_binary(3))

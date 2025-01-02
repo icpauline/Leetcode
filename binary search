@@ -1,0 +1,25 @@
+def binary_search(numbers, k):
+    numbers = sorted(numbers)  # Sort the numbers
+    f = 0  # First index
+    l = len(numbers) - 1  # Last index
+
+    while f <= l:
+        m = (f + l) // 2  # Calculate the midpoint
+
+        if k == numbers[m]:  # Check if the midpoint is the key
+            return m
+        elif k < numbers[m]:  # Search in the left half
+            l = m - 1
+        else:  # Search in the right half
+            f = m + 1
+
+    return -1  # Return -1 if the key is not found
+
+# Test the function
+numbers = [14, 35, 14, 65, 36, 98, 34, 63, 56, 25]
+position = binary_search(numbers, 65)
+
+if position == -1:
+    print('Number not available')
+else:
+    print('The number is at the position after sorting:', position)

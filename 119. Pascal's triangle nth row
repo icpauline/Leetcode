@@ -1,0 +1,13 @@
+def pascal_nthrow(n):
+    result = []  # List to store the nth row
+    prev = 1  # First element is always 1
+    result.append(prev)  # Add the first element
+
+    for i in range(1, n + 1):
+        # Calculate the next element in the row
+        current = (prev * (n - i + 1)) // i
+        result.append(current)  # Add it to the result list
+        prev = current  # Update prev for the next iteration
+
+    return result  # Return the full row
+print(pascal_nthrow(10))

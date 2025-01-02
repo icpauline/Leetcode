@@ -1,0 +1,24 @@
+def armstrong_number(n):
+    copy = n  # Preserve the original number
+    total = 0
+    num_digits = len(str(n))  # Get the number of digits in n
+
+    while n > 0:  # Loop while n is greater than 0
+        temp = n % 10  # Extract the last digit
+        total += pow(temp, num_digits)  # Add the power of the digit to total
+        n = n // 10  # Remove the last digit
+
+    if total == copy:  # Compare the total to the original number
+        return "Armstrong Number"
+    else:
+        return "Not an Armstrong Number"
+
+# Test the function
+number = 153
+print(f"{number} is {armstrong_number(number)}")
+
+number = 9474
+print(f"{number} is {armstrong_number(number)}")
+
+number = 123
+print(f"{number} is {armstrong_number(number)}")
